@@ -1,0 +1,10 @@
+1. Why is it better to perform the transformation from world space into tangent space in the vertex shader rather than in the fragment shader?
+
+Because tangent space is local, the change in representation can be different for every fragment. Polygonal meshes are involved and if we use the same normal across each polygon the calculation will be much simpler. Then the application can send the tangent and binormal to the vertex shader once for each polygon. 
+
+2) Why does the normal map lookup need to occur in the fragment shader, rather than in the vertex shader?
+Because the obtain the values of a normal map using a sampler. Normal map are precomputed as arrays in the application and stored as a texutre and fragment shader can obtain these values using a sampler. 
+
+3) Name two properties that we need the normal, tangent, and binormal vectors to have?
+a. allows us to go to the local coordinate system in whcih the bump map calculations match was made
+b. They must be constant and must be described by the plane z = 0. 
