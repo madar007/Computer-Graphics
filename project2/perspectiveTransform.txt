@@ -1,0 +1,13 @@
+The perspective transform from lecture is in terms of F, D, H, W, while the book's perspective
+transform is in terms of near, far, top , bottom, left, right. 
+
+It basically comes out to be the same thing. From the lecture's matrix, the first column has 
+2D/W and the book's has near/right. D and near are actually same concept of variables, the 
+difference here is the right and W. W is the width of the view plane while right is only the
+right side of the camera. So W would be twice as long as right, that's why matrix from class 
+needed to have 2D. The explanation for other parts of the matrix is also similar this to 
+explanation. 
+
+The other difference was that the third column of the class's matrix is positive while the book's
+is negative. That is because the book's matrix has the plane z to be between -1 and 1. The class 
+matrix is between 0 and 1. 
